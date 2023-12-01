@@ -11,7 +11,7 @@ const app = express();
 const corsOptions = {
   //To allow requests from client
   origin: [
-    "https://dashboard.heroku.com",
+    "https://ecommerce-tcj.netlify.app/",
     "http://localhost:3000",
     "http://127.0.0.1",
   ],
