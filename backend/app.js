@@ -48,13 +48,13 @@ app.use("/api/v1", Payment);
 
 // **********  Deployment  **********
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
-  console.log("dirname===>", __dirname);
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-    // res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
-  });
+if (process.env.NODE_ENV !== "production") {
+  // app.use(express.static(path.join(__dirname, "../frontend/build")));
+  // console.log("dirname===>", __dirname);
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  //   // res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
+  // });
   app.get("*", (req, res) => {
     res.send("api is working");
   });
