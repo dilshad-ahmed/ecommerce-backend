@@ -8,18 +8,17 @@ const fileUpload = require("express-fileupload");
 const path = require("path");
 
 const app = express();
-// const corsOptions = {
-//   //To allow requests from client
-//   origin:
-//   [
-//     "https://dashboard.heroku.com",
-//     "http://localhost:3000",
-//     "http://127.0.0.1",
-//   ],
+const corsOptions = {
+  //To allow requests from client
+  origin: [
+    "https://dashboard.heroku.com",
+    "http://localhost:3000",
+    "http://127.0.0.1",
+  ],
 
-//   credentials: true,
-//   exposedHeaders: ["set-cookie"],
-// };
+  credentials: true,
+  exposedHeaders: ["set-cookie"],
+};
 
 // dotenv config
 
@@ -28,8 +27,8 @@ if (process.env.NODE_ENV !== "production") {
   dotenv.config({ path: "backend/config/config.env" });
 }
 
-app.use(cors());
-// app.use(cors(corsOptions));
+// app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
