@@ -10,10 +10,11 @@ const path = require("path");
 const app = express();
 const corsOptions = {
   //To allow requests from client
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
+  origin: [
+    "https://ecommerce-tcj.netlify.app/",
+    "http://localhost:3000",
+    "http://127.0.0.1",
+  ],
 
   credentials: true,
   exposedHeaders: ["set-cookie"],
